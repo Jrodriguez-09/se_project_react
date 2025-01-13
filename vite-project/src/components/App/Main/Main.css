@@ -6,3 +6,12 @@
   list-style-type: none;
   gap: 21px;
 }
+
+.cards__texts {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.8px;
+  margin-top: 40px;
+  margin-bottom: 34px;
+  /* font-family: */
+}

@@ -1,0 +1,43 @@
+.modal__content_type_image {
+  position: relative;
+  max-width: 498px;
+  max-height: 610px;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  padding: 0;
+}
+
+.modal__close {
+}
+
+.modal__image {
+  height: 498px;
+  width: 498px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  object-fit: cover;
+}
+
+.modal__footer {
+}
+
+.modal__caption {
+  margin-left: 32px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 20px;
+  /* font-family */
+  margin-top: 20px;
+}
+
+.modal__weather {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  /* font-family: ; */
+  margin-bottom: 32px;
+  margin-left: 32px;
+  margin-top: 0;
+}

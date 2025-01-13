@@ -9,8 +9,24 @@
   position: absolute;
   top: 15px;
   margin: 0;
+  background-color: #fff;
+  /* font-family: */
+  padding: 2px, 12px, 2px, 12px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  width: 73px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card__image {
   width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  cursor: pointer;
 }
