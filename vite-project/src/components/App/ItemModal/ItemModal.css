@@ -9,6 +9,15 @@
 }
 
 .modal__close {
+  background-image: url(../../../assets/closebutton-white.svg);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
 }
 
 .modal__image {
@@ -19,16 +28,13 @@
   object-fit: cover;
 }
 
-.modal__footer {
-}
-
 .modal__caption {
   margin-left: 32px;
   margin-bottom: 12px;
   font-weight: 500;
   line-height: 24px;
   font-size: 20px;
-  /* font-family */
+  font-family: "CabinetGrotesk-Medium", sans-serif;
   margin-top: 20px;
 }
 
@@ -36,7 +42,7 @@
   font-size: 20px;
   line-height: 20px;
   font-weight: 500;
-  /* font-family: ; */
+  font-family: "CabinetGrotesk-Medium", sans-serif;
   margin-bottom: 32px;
   margin-left: 32px;
   margin-top: 0;

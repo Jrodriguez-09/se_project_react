@@ -13,6 +13,8 @@
   position: absolute;
   top: 20px;
   left: 16px;
+  font-weight: 700;
+  font-family: "CabinetGrotesk-Bold", sans-serif;
 }
 
 .weather-card__image {
