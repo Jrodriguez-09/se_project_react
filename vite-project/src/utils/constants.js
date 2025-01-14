@@ -1,11 +1,3 @@
-export const weatherOptions = [
-  {
-    day: true,
-    condition: "clear",
-    url: new URL("", import.meta.url),
-  },
-];
-
 export const defaultClothingItems = [
   {
     _id: 0,
