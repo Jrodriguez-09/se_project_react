@@ -11,7 +11,7 @@ import { filterWeatherData, getWeather } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
-import { getItems } from "../../utils/api";
+import { getItems, addItems, deleteItems } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -42,9 +42,26 @@ function App() {
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    setClothingItems([{ name, link: imageUrl, weather }, ...clothingItems]);
-    closeActiveModal();
+    addItems({ name, imageUrl, weather })
+      .then((values) => {
+        setClothingItems([values, ...clothingItems]);
+        closeActiveModal();
+      })
+      .catch((err) => console.log(err));
   };
+
+  const handleCardDelete = (cardId) => {
+    deleteItems(selectedCard._id)
+      .then((data) => {
+        setClothingItems(
+          clothingItems.filter((card) => card._id !== selectedCard._id)
+        );
+        setSelectedCard({});
+        closeActiveModal();
+      })
+      .catch(console.error);
+  };
+
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -83,7 +100,13 @@ function App() {
             />
             <Route
               path="/profile"
-              element={<Profile handleCardClick={handleCardClick} />}
+              element={
+                <Profile
+                  handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                  handleAddClick={handleAddClick}
+                />
+              }
             />
           </Routes>
         </div>
@@ -96,6 +119,7 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           handleCloseClick={closeActiveModal}
+          onDeleteItem={handleCardDelete}
         />
         <Footer />
       </div>
