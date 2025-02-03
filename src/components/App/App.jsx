@@ -52,7 +52,7 @@ function App() {
 
   const handleCardDelete = (cardId) => {
     deleteItems(selectedCard._id)
-      .then((data) => {
+      .then(() => {
         setClothingItems(
           clothingItems.filter((card) => card._id !== selectedCard._id)
         );
@@ -74,7 +74,6 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
-        console.log(data);
         setClothingItems(data);
       })
       .catch(console.error);

@@ -1,6 +1,6 @@
 import "./AddItemModal.css";
 import ModalWithForm from "../App/ModalWithForm/ModalWithForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AddItemModal = ({ isOpen, handleCloseClick, onAddItemModalSubmit }) => {
   const [name, setName] = useState("");
@@ -12,20 +12,25 @@ const AddItemModal = ({ isOpen, handleCloseClick, onAddItemModalSubmit }) => {
   };
 
   const handleImageUrlChange = (e) => {
-    setImageUrl(e.target.vaule);
+    setImageUrl(e.target.value);
   };
 
   const handleWeatherChange = (e) => {
-    setWeather(e.target.vaule);
+    setWeather(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddItemModalSubmit({ name, imageUrl, weather });
-    setName("");
-    setImageUrl("");
-    setWeather("");
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      setName("");
+      setImageUrl("");
+      setWeather("");
+    }
+  }, [isOpen]);
 
   return (
     <ModalWithForm
@@ -73,7 +78,7 @@ const AddItemModal = ({ isOpen, handleCloseClick, onAddItemModalSubmit }) => {
             name="weather"
             value={"hot"}
             onChange={handleWeatherChange}
-            checked={weather === "hot"}
+            //checked={weather === "hot"}
           />{" "}
           Hot
         </label>
@@ -85,7 +90,7 @@ const AddItemModal = ({ isOpen, handleCloseClick, onAddItemModalSubmit }) => {
             name="weather"
             value={"warm"}
             onChange={handleWeatherChange}
-            checked={weather === "warm"}
+            //checked={weather === "warm"}
           />
           Warm
         </label>
@@ -97,7 +102,7 @@ const AddItemModal = ({ isOpen, handleCloseClick, onAddItemModalSubmit }) => {
             name="weather"
             value={"cold"}
             onChange={handleWeatherChange}
-            checked={weather === "cold"}
+            //checked={weather === "cold"}
           />
           Cold
         </label>
