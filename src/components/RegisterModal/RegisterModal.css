@@ -1,0 +1,16 @@
+.modal__button-container {
+    margin: 0;
+}
+
+.modal__login {
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    font-family: "CabinetGrotesk-Bold", sans-serif;
+    background-color: transparent;
+    padding: 0;
+    width: 80px;
+    height: 40px;
+}

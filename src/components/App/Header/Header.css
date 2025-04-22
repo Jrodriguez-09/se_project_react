@@ -27,6 +27,24 @@
   margin-left: 0;
 }
 
+.header__signup-button {
+  cursor: pointer;
+  border: none;
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.header__login-button {
+  cursor: pointer;
+  border: none;
+  line-height: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: transparent;
+}
+
 .header__link {
   text-decoration: none;
   color: black;
