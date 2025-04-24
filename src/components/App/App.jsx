@@ -242,14 +242,14 @@ function App() {
         />
         <RegisterModal
           isOpen={activeModal === "signup"}
-          handleRegister={handleRegister}
+          onRegister={handleRegister}
           isLoading={isLoading}
           handleCloseClick={closeActiveModal}
           handleLoginClick={handleOnLoginClick}
           />
           <LoginModal
             isOpen={activeModal === "login"}
-            handleProfileLogin={handleProfileLogin}
+            onLogin={handleProfileLogin}
             isLoading={isLoading}
             handleCloseClick={closeActiveModal}
             handleRegisterClick={handleOnSignUpClick}

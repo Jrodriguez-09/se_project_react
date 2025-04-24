@@ -51,7 +51,7 @@ const RegisterModal = ({ isOpen, handleCloseClick, onRegister, handleLoginClick 
           <input
             type="email"
             className="modal__input"
-            id="email"
+            id="email-register"
             placeholder="Email"
             required
             name="email"
@@ -64,7 +64,7 @@ const RegisterModal = ({ isOpen, handleCloseClick, onRegister, handleLoginClick 
           <input
             type="password"
             className="modal__input"
-            id="password"
+            id="password-register"
             placeholder="Password"
             required
             name="password"
@@ -79,7 +79,7 @@ const RegisterModal = ({ isOpen, handleCloseClick, onRegister, handleLoginClick 
           <input
             type="text"
             className="modal__input"
-            id="name"
+            id="name-register"
             placeholder="Name"
             required
             name="name"
@@ -94,7 +94,7 @@ const RegisterModal = ({ isOpen, handleCloseClick, onRegister, handleLoginClick 
           <input
             type="url"
             className="modal__input"
-            id="avatarUrl"
+            id="avatarUrl-register"
             placeholder="Avatar URL"
             required
             name="avatar"

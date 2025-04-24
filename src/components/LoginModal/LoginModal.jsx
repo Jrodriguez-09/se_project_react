@@ -39,7 +39,7 @@ const LoginModal = ({ isOpen, handleCloseClick, onLogin, handleRegisterClick }) 
             <input
               type="email"
               className="modal__input"
-              id="email"
+              id="email-login"
               placeholder="Email"
               required
               name="email"
@@ -52,7 +52,7 @@ const LoginModal = ({ isOpen, handleCloseClick, onLogin, handleRegisterClick }) 
             <input
               type="password"
               className="modal__input"
-              id="password"
+              id="password-login"
               placeholder="Password"
               required
               name="password"

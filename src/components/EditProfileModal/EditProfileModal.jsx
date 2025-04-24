@@ -41,7 +41,7 @@ const EditProfileModal = ({ isOpen, handleCloseClick, onEditProfile }) => {
                 <input
                   type="text"
                   className="modal__input"
-                  id="name"
+                  id="name-edit"
                   placeholder="Name"
                   required
                   name="name"
