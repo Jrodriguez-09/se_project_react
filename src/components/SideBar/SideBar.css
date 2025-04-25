@@ -7,11 +7,15 @@
   font-family: "CabinetGrotesk-Bold", sans-serif;
   width: 229px;
   padding-right: 116px;
+  height: 138px;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar__avatar {
   width: 56px;
   height: 56px;
+  margin-bottom: 24px;
 }
 
 .sidebar__username {
@@ -19,4 +23,34 @@
   margin-bottom: auto;
   width: 157px;
   height: 25px;
+  position: absolute;
+  left: 112px;
+  top: 125px;
+}
+
+.sidebar__edit-button {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "CabinetGrotesk-Bold", sans-serif;
+  background: none;
+  border: none;
+  line-height: 100%;
+  text-align: left;
+  cursor: pointer;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+.sidebar__logout-button {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "CabinetGrotesk-Bold", sans-serif;
+  background: none;
+  border: none;
+  line-height: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }

@@ -257,7 +257,7 @@ function App() {
           <EditProfileModal
             isOpen={activeModal === "edit-profile"}
             handleCloseClick={closeActiveModal} 
-            handleEditProfile={handleEditProfile}
+            onEditProfile={handleEditProfile}
           />  
       </div>
       </CurrentUserContext.Provider>

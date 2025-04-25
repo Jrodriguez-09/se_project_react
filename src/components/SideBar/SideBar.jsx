@@ -12,13 +12,13 @@ function SideBar({ handleEditProfileClick, handleSignOut }) {
     <div className="sidebar__edit-profile">
       <button
       type="button"
-      className="sidebar__button"
+      className="sidebar__edit-button"
       onClick={handleEditProfileClick}>
         Edit Profile 
       </button>
       <button
       type="button"
-      className="sidebar__button"
+      className="sidebar__logout-button"
       onClick={handleSignOut}>
         Logout
       </button>
