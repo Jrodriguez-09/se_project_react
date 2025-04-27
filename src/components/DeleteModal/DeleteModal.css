@@ -32,6 +32,7 @@
     text-align: center;
     margin-left: 266px;
     padding: 0;
+    cursor: pointer;
 }
 
 .modal__cancel {
@@ -45,4 +46,5 @@
     padding: 0;
     margin-left: 304px;
    margin-top: 24px;
+   cursor: pointer;
 }
