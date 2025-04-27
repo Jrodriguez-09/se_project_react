@@ -18,6 +18,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import { signUp, signIn, getUserInfo } from "../../utils/auth";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import DeleteModal from "../DeleteModal/DeleteModal";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -61,6 +62,10 @@ function App() {
 
   const handleEidtProfileClick = () => {
     setActiveModal("edit-profile");
+  };
+
+  const handleDeleteClick = () => {
+    setActiveModal("delete-item")
   };
 
   const handleSignOut = () => {
@@ -131,24 +136,28 @@ function App() {
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
-    addItems({ name, imageUrl, weather })
-      .then((values) => {
-        setClothingItems([values, ...clothingItems]);
+    const token = localStorage.getItem("jwt");
+    if(!token) return;
+    addItems({ name, imageUrl, weather }, token)
+      .then((item) => {
+        setClothingItems([item, ...clothingItems]);
         closeActiveModal();
       })
       .catch((err) => console.log(err));
   };
 
-  const handleCardDelete = (cardId) => {
+  const handleCardDelete = () => {
+    const token = localStorage.getItem("jwt");
+    if(!token) return;
     deleteItems(selectedCard._id)
       .then(() => {
         setClothingItems(
-          clothingItems.filter((card) => card._id !== selectedCard._id)
+          clothingItems.filter((item) => item._id !== selectedCard._id)
         );
         setSelectedCard({});
         closeActiveModal();
       })
-      .catch(console.error);
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -238,7 +247,7 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           handleCloseClick={closeActiveModal}
-          onDeleteItem={handleCardDelete}
+          handleCardDelete={handleDeleteClick}
         />
         <RegisterModal
           isOpen={activeModal === "signup"}
@@ -259,6 +268,11 @@ function App() {
             handleCloseClick={closeActiveModal} 
             onEditProfile={handleEditProfile}
           />  
+          <DeleteModal
+          isOpen={activeModal === "delete-item"}
+          handleCloseClick={closeActiveModal}
+          onConfirm={handleCardDelete}
+          />
       </div>
       </CurrentUserContext.Provider>
     </CurrentTemperatureUnitContext.Provider>

@@ -23,8 +23,8 @@ function addItems({ name, imageUrl, weather }, token) {
   }).then(checkResponse);
 }
 
-function deleteItems(cardId, token) {
-  return fetch(`${baseUrl}/items/${cardId}`, {
+function deleteItems(id, token) {
+  return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
