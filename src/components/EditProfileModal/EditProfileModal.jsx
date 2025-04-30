@@ -36,7 +36,7 @@ const EditProfileModal = ({ isOpen, handleCloseClick, onEditProfile }) => {
         handleCloseClick={handleCloseClick}
         onSubmit={handleSubmit}
         >
-            <label htmlFor="name" className="modal__label">
+            <label htmlFor="name-edit" className="modal__label">
                 Name{""}
                 <input
                   type="text"

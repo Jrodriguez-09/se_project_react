@@ -116,7 +116,8 @@ function App() {
         setIsLoggedIn(true);
         closeActiveModal();
       }) 
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      ,fianlly(() => setIsLoading(false));
   };
 
   const handleRegister = ({ name, avatar, email, password }) => {
@@ -132,7 +133,8 @@ function App() {
       setIsLoggedIn(true);
       closeActiveModal();
     }) 
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
+    .finally(() => setIsLoading(false));
   };
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {

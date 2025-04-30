@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ModalWithForm from "../App/ModalWithForm/ModalWithForm";
 import "./LoginModal.css";
 
-const LoginModal = ({ isOpen, handleCloseClick, onLogin, handleRegisterClick }) => {
+const LoginModal = ({ isOpen, handleCloseClick, onLogin, handleRegisterClick, isLoading }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -29,12 +29,12 @@ const LoginModal = ({ isOpen, handleCloseClick, onLogin, handleRegisterClick }) 
     return (
         <ModalWithForm
           title="Log In"
-          buttonText="Login"
+          buttonText={isLoading ? "Logging In" : "Login"}
           isOpen={isOpen}
           handleCloseClick={handleCloseClick}
           onSubmit={handleSubmit}
         >
-          <label htmlFor="email" className="modal__label">
+          <label htmlFor="email-login" className="modal__label">
             Email{""}
             <input
               type="email"
@@ -47,7 +47,7 @@ const LoginModal = ({ isOpen, handleCloseClick, onLogin, handleRegisterClick }) 
               value={email}
             />
           </label>
-          <label htmlFor="password" className="modal__label">
+          <label htmlFor="password-login" className="modal__label">
             Password{""}
             <input
               type="password"

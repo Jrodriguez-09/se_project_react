@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ModalWithForm from "../App/ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-const RegisterModal = ({ isOpen, handleCloseClick, onRegister, handleLoginClick }) => {
+const RegisterModal = ({ isOpen, handleCloseClick, onRegister, handleLoginClick, isLoading }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword]= useState("");
     const [name, setName] = useState("");
@@ -41,12 +41,12 @@ const RegisterModal = ({ isOpen, handleCloseClick, onRegister, handleLoginClick 
     return (
       <ModalWithForm
         title="Sign Up"
-        buttonText="Sign Up"
+        buttonText={isLoading ? "Signing Up..." : "Next"}
         isOpen={isOpen}
         handleCloseClick={handleCloseClick}
         onSubmit={handleSubmit}
       >
-        <label htmlFor="email" className="modal__label">
+        <label htmlFor="email-register" className="modal__label">
           Email{""}
           <input
             type="email"
@@ -59,7 +59,7 @@ const RegisterModal = ({ isOpen, handleCloseClick, onRegister, handleLoginClick 
             value={email}
           />
         </label>
-        <label htmlFor="password" className="modal__label">
+        <label htmlFor="password-register" className="modal__label">
           Password{""}
           <input
             type="password"
@@ -74,7 +74,7 @@ const RegisterModal = ({ isOpen, handleCloseClick, onRegister, handleLoginClick 
             value={password}
           />
         </label>
-        <label htmlFor="name" className="modal__label">
+        <label htmlFor="name-register" className="modal__label">
           Name{""}
           <input
             type="text"
@@ -89,7 +89,7 @@ const RegisterModal = ({ isOpen, handleCloseClick, onRegister, handleLoginClick 
             value={name}
           />
         </label>
-        <label htmlFor="avatarUrl" className="modal__label">
+        <label htmlFor="avatarUrl-register" className="modal__label">
           Avatar URL{""}
           <input
             type="url"

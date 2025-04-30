@@ -1,4 +1,5 @@
 import "./ModalWithForm.css";
+import useModalClose from "../../../utils/useModalClose";
 
 function ModalWithForm({
   children,
@@ -8,6 +9,7 @@ function ModalWithForm({
   handleCloseClick,
   onSubmit,
 }) {
+  useModalClose(isOpen, handleCloseClick);
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
       <div className="modal__content">

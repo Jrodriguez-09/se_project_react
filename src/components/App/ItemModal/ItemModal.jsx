@@ -1,8 +1,10 @@
 import "./ItemModal.css";
 import CurrentUserContext from "../../../contexts/CurrentUserContext";
 import { useContext } from "react";
+import useModalClose from "../../../utils/useModalClose";
 
-function ItemModal({ activeModal, handleCloseClick, card, handleCardDelete, }) {
+function ItemModal({ activeModal, handleCloseClick, card, handleCardDelete, isOpen }) {
+  useModalClose(isOpen, handleCloseClick);
 
   const currentUser = useContext(CurrentUserContext);
 
