@@ -117,7 +117,7 @@ function App() {
         closeActiveModal();
       }) 
       .catch((err) => console.log(err))
-      ,fianlly(() => setIsLoading(false));
+      .finally(() => setIsLoading(false));
   };
 
   const handleRegister = ({ name, avatar, email, password }) => {
